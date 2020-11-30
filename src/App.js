@@ -1,25 +1,13 @@
-import logo from './logo.svg';
-import './App.css';
+import Squares from "./lift-state/Squares";
+import SignUp from "./lift-state/SignUp";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <>
+            <Squares colour="pink" />
+            <SignUp minimumLength={12} />
+        </>
+    );
 }
 
 export default App;
