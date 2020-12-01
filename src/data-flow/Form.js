@@ -27,6 +27,7 @@ class Form extends React.Component {
         let { handleSubmit } = this.props;
         let { name, email } = this.state;
         handleSubmit({ name, email }); // key and variable are named the same so ablle to use in this way.
+        this.setState({ name: "", email: "" });
     }
 
     render() {
