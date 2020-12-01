@@ -26,7 +26,7 @@ class Form extends React.Component {
         e.preventDefault();
         let { handleSubmit } = this.props;
         let { name, email } = this.state;
-        handleSubmit({ name, email }); // key and variable are named the same so ablle to use in this way.
+        handleSubmit({ name, email }); // key and variable are named the same so ablle to use in this way. Alternativiely could do a copy of {...this.state}
         this.setState({ name: "", email: "" });
     }
 
