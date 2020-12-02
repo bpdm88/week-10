@@ -1,17 +1,28 @@
-import Squares from "./lift-state/Squares";
-import SignUp from "./lift-state/SignUp";
-import Button from "./data-flow/Button";
-import Form from "./data-flow/Form";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import Header from "./Header";
+import Challenges from "./Challenges";
+import Articles from "./news/Articles";
+import Article from "./news/Article";
+import CreateArticle from "./news/CreateArticle";
 
-function App() {
-    return (
-        <>
-            <Squares colour="pink" />
-            <SignUp minimumLength={12} />
-            <Button handleUpdate={(count) => console.log(count)} />
-            <Form handleSubmit={(value) => console.log(value)} />
-        </>
-    );
-}
+const App = () => (
+    <Router>
+        <Header />
+        <Route exact path="/challenges">
+            <Challenges />
+        </Route>
+        <Route exact path="/news">
+            <Articles />
+        </Route>
+        <Route
+            exact
+            path="/news/:id"
+            render={({ match }) => <Article id={match.params.id} />}
+        />
+        <Route exact path="/news/create">
+            <CreateArticle />
+        </Route>
+    </Router>
+);
 
 export default App;
