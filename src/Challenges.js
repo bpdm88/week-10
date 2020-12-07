@@ -12,6 +12,9 @@ import RollCall from "./basic-hooks/RollCall";
 import PasswordStrength from "./basic-hooks/PasswordStrength";
 import TempConverter from "./basic-hooks/TempConverter";
 import List from "./basic-hooks/List";
+import ClickedReducer from "./use-reducer/ClickedReducer";
+import StepCounterReducer from "./use-reducer/StepCounterReducer";
+import TempConverterReducer from "./use-reducer/TempConverterReducer";
 
 const Challenges = () => (
     <>
@@ -29,6 +32,9 @@ const Challenges = () => (
         <PasswordStrength />
         <TempConverter />
         <List />
+        <ClickedReducer />
+        <StepCounterReducer max={100} step={5} />
+        <TempConverterReducer />
     </>
 );
 
